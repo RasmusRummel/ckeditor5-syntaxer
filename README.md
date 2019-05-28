@@ -6,7 +6,7 @@ ckeditor5-syntaxer is a 3. party free code syntaxer for CKEditor 5.
 
 
 
-Full ckeditor5-syntaxer official documentation here : [CKPopover - a CKEditor 5 plugin](https://topiqs.online/1122).
+Full ckeditor5-syntaxer official documentation here : [CKSyntaxer - a CKEditor 5 plugin](https://topiqs.online/1122).
 <br />The full documentation also contains step-by-step creation of the editor.
 <br />Below is a short usage documentation. 
 
@@ -35,15 +35,15 @@ ClassicEditor.builtinPlugins = [
 ]
 ```
 
-<br />//#2 : Then creating the CKEditor5 set the SyntaxerPlugin languages (optional) :
+<br />//#2 : Then creating the CKEditor5 set the SyntaxerPlugin languages and wrapper element :
 
 ```javaqscript
 ClassicEditor.create(document.querySelector('#editor'), {
     syntaxer: {
-        languages: ['c#', 'php', 'java', 'sql', 'javascript', 'json', 'xml', 'html', 'css', 'markdown'], // optional
-		element: 'pre' // optional - the wrapping element is default a 'pre', however you can set this to eg. 'div' if you prefer
+        languages: ['c#', 'php', 'java', 'sql', 'javascript', 'json', 'xml', 'html', 'css', 'markdown'],
+		element: 'pre' // chose 'pre' or 'div'
     }
-        // ...
+    // ...
 });
 ```
 <br />//#3 : In the page that consumes the result of your CKEditor5, make a reference to a syntaxing library, here HighlightJs, in the header of that page :
@@ -63,7 +63,7 @@ ClassicEditor.create(document.querySelector('#editor'), {
 <br />//#4 : In the page that consumes the result of your CKEditor5, call the syntaxer function of your syntaxer library, here shown for HighlightJs :
 ```javascript
 document.addEventListener("DOMContentLoaded", () => {
-	var codeBlocks = document.querySelectorAll("pre.code"); // default element (pre) and class distinguisher (code) used by ckeditor5-syntaxer
+	var codeBlocks = document.querySelectorAll("pre.code");
 	codeBlocks.forEach((codeBlock) => {
 		hljs.highlightBlock(codeBlock);
 	});
