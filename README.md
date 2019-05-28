@@ -41,7 +41,7 @@ ClassicEditor.builtinPlugins = [
 ClassicEditor.create(document.querySelector('#editor'), {
     syntaxer: {
         languages: ['c#', 'php', 'java', 'sql', 'javascript', 'json', 'xml', 'html', 'css', 'markdown'],
-		element: 'pre' // chose 'pre' or 'div'
+	element: 'pre' // chose 'pre' or 'div'
     }
     // ...
 });
