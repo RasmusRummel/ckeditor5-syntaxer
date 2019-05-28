@@ -40,8 +40,8 @@ ClassicEditor.builtinPlugins = [
 ```javaqscript
 ClassicEditor.create(document.querySelector('#editor'), {
     syntaxer: {
-        languages: ['c#', 'php', 'java', 'sql', 'javascript', 'json', 'xml', 'html', 'css', 'markdown'],
-	element: 'pre' // chose 'pre' or 'div'
+		languages: ['c#', 'php', 'java', 'sql', 'javascript', 'json', 'xml', 'html', 'css', 'markdown'],
+		element: 'pre' // chose 'pre' or 'div'
     }
     // ...
 });
@@ -49,13 +49,13 @@ ClassicEditor.create(document.querySelector('#editor'), {
 <br />//#3 : In the page that consumes the result of your CKEditor5, make a reference to a syntaxing library, here HighlightJs, in the header of that page :
 ```html
 <html>
-    <head>
-	    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
-	    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+	<head>
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
 		// ...
 	</head>
 	<body>
-	    // ...
+		// ...
 	</body>
 </html>
 ```
