@@ -1,0 +1,30 @@
+{
+  "name": "ckeditor5-syntaxer",
+  "version": "1.0.4",
+  "description": "Code syntaxer for CKEditor5.",
+  "keywords": [
+    "ckeditor 5",
+    "code",
+    "syntaxing"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RasmusRummel/ckeditor5-syntaxer.git"
+  },
+  "files": [
+    "src",
+    "theme",
+    "theme/icons"
+  ],
+  "main": "src/syntaxer.js",
+  "author": "Rasmus Rummel",
+  "license": "MIT",
+  "dependencies": {
+    "@ckeditor/ckeditor5-core": "^12.1.0",
+    "@ckeditor/ckeditor5-engine": "^13.1.0",
+    "@ckeditor/ckeditor5-essentials": "^11.0.1",
+    "@ckeditor/ckeditor5-widget": "^11.0.1",
+    "@ckeditor/ckeditor5-ui": "^12.1.0",
+    "@ckeditor/ckeditor5-utils": "^12.1.0"
+  }
+}
