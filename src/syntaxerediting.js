@@ -1,4 +1,4 @@
-﻿import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
+import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
 import { toWidgetEditable } from '@ckeditor/ckeditor5-widget/src/utils';
 
 import SyntaxerCommand from './syntaxercommand';
@@ -80,7 +80,6 @@ export default class SyntaxerEditing extends Plugin {
     _defineConverters() {
         const conversion = this.editor.conversion;
         var wrapperElement = this.editor.config.get('syntaxer.element');
-        console.log("wrapperElement = " + wrapperElement);
 
         conversion.for('upcast').elementToElement({
             view: () => {
