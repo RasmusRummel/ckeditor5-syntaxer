@@ -13,7 +13,7 @@ export default class SyntaxerUI extends Plugin {
 		var languages = editor.config.get('syntaxer.languages');
 
         	if (typeof languages == "undefined") {
-            	languages = ['javascript', 'html', 'c#', 'php'];
+            		languages = ['javascript', 'html', 'c#', 'php'];
         	}
 
 		editor.ui.componentFactory.add( 'syntaxer', locale => {
