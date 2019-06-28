@@ -1,4 +1,4 @@
-﻿import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
+import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
 import { addListToDropdown, createDropdown } from '@ckeditor/ckeditor5-ui/src/dropdown/utils';
 import Collection from '@ckeditor/ckeditor5-utils/src/collection';
 import Model from '@ckeditor/ckeditor5-ui/src/model';
@@ -10,27 +10,31 @@ export default class SyntaxerUI extends Plugin {
 	init() {
 		const editor = this.editor;
 		const t = editor.t;
-        const languages = editor.config.get('syntaxer.languages');
+		var languages = editor.config.get('syntaxer.languages');
+
+        	if (typeof languages == "undefined") {
+            	languages = ['javascript', 'html', 'c#', 'php'];
+        	}
 
 		editor.ui.componentFactory.add( 'syntaxer', locale => {
-            const dropdownView = createDropdown(locale);
+            		const dropdownView = createDropdown(locale);
 
-            addListToDropdown(dropdownView, getDropdownItemsDefinitions(languages)); // arguments : DropdownView, Collection
+            		addListToDropdown(dropdownView, getDropdownItemsDefinitions(languages)); // arguments : DropdownView, Collection
 
-            dropdownView.buttonView.set({
-                label: t('Syntaxer'),
-                tooltip: true,
-                icon: syntaxerIcon
-            });
+			dropdownView.buttonView.set({
+				label: t('Syntaxer'),
+				tooltip: true,
+				icon: syntaxerIcon
+			});
 
-            this.listenTo(dropdownView, 'execute', evt => {
-                editor.execute('syntaxer', { language: evt.source.commandParam });
-                editor.editing.view.focus();
-            });
+			this.listenTo(dropdownView, 'execute', evt => {
+				editor.execute('syntaxer', { language: evt.source.commandParam });
+				editor.editing.view.focus();
+			});
 
-            return dropdownView;
-		} );
-    }
+			return dropdownView;
+		});
+	}
 }
 
 function getDropdownItemsDefinitions(languages) {
