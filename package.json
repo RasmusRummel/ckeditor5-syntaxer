@@ -1,6 +1,6 @@
 {
   "name": "ckeditor5-syntaxer",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Code syntaxer for CKEditor5.",
   "keywords": [
     "ckeditor 5",
@@ -20,11 +20,9 @@
   "author": "Rasmus Rummel",
   "license": "MIT",
   "dependencies": {
-    "@ckeditor/ckeditor5-core": "^12.1.0",
-    "@ckeditor/ckeditor5-engine": "^13.1.0",
-    "@ckeditor/ckeditor5-essentials": "^11.0.1",
-    "@ckeditor/ckeditor5-widget": "^11.0.1",
-    "@ckeditor/ckeditor5-ui": "^12.1.0",
-    "@ckeditor/ckeditor5-utils": "^12.1.0"
+    "@ckeditor/ckeditor5-core": "12.1.1",
+    "@ckeditor/ckeditor5-widget": "11.0.2",
+    "@ckeditor/ckeditor5-ui": "13.0.0",
+    "@ckeditor/ckeditor5-utils": "12.1.1"
   }
 }
