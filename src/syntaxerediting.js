@@ -85,7 +85,7 @@ export default class SyntaxerEditing extends Plugin {
             view: () => {
                 return { name: this.editor.config.get('syntaxer.element'), classes: ['code'] };
             },
-            model: (viewElement, modelWriter) => {
+            model: (viewElement, { writer: modelWriter }) => {
                 var cssClass = viewElement.getAttribute('class');
                 return modelWriter.createElement('syntaxer', { class: cssClass });
             }
@@ -93,7 +93,7 @@ export default class SyntaxerEditing extends Plugin {
 
         conversion.for('editingDowncast').elementToElement({
             model: 'syntaxer',
-            view: (modelItem, viewWriter) => {
+            view: (modelItem, { writer: viewWriter }) => {
                 const syntaxer = createSyntaxerView(modelItem, viewWriter, this.editor);
                 return toWidgetEditable(syntaxer, viewWriter);
             }
@@ -101,7 +101,7 @@ export default class SyntaxerEditing extends Plugin {
 
         conversion.for('dataDowncast').elementToElement({
             model: 'syntaxer',
-            view: (modelItem, viewWriter) => {
+            view: (modelItem, { writer: viewWriter }) => {
                 const cssClass = modelItem.getAttribute('class');
                 const syntaxer = viewWriter.createContainerElement(this.editor.config.get('syntaxer.element'), { class: cssClass });
 
