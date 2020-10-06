@@ -1,4 +1,4 @@
-﻿import Command from '@ckeditor/ckeditor5-core/src/command';
+import Command from '@ckeditor/ckeditor5-core/src/command';
 import first from '@ckeditor/ckeditor5-utils/src/first';
 
 export default class SyntaxerCommand extends Command {
@@ -13,8 +13,8 @@ export default class SyntaxerCommand extends Command {
         const schema = model.schema;
         const selection = model.document.selection;
 
-        const blocks = Array.from(selection.getTopMostBlocks());
-        const syntaxer = first(selection.getTopMostBlocks()).parent;
+        const blocks = Array.from(selection.getSelectedBlocks());
+        const syntaxer = first(selection.getSelectedBlocks()).parent;
 
         model.change(writer => {
             if (this.language == language) {
@@ -37,14 +37,14 @@ export default class SyntaxerCommand extends Command {
 
     _getIsSyntaxed() {
         const selection = this.editor.model.document.selection;
-        const firstBlock = first(selection.getTopMostBlocks());
+        const firstBlock = first(selection.getSelectedBlocks());
 
         return !!(firstBlock && findSyntaxer(firstBlock));
     }
 
     _getLanguage() {
         const selection = this.editor.model.document.selection;
-        const firstBlock = first(selection.getTopMostBlocks());
+        const firstBlock = first(selection.getSelectedBlocks());
         if (firstBlock) {
             const syntaxer = findSyntaxer(firstBlock);
             if (syntaxer) {
