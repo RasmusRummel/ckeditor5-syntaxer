@@ -2,7 +2,7 @@
 
 ckeditor5-syntaxer is a 3. party free code syntaxer for CKEditor 5.
 
-<br /><br />ckeditor5-syntaxer is just a wrapper to be used together with a syntaxing library like HighlightJs. ckeditor5-syntaxer wraps a block of code and set the language as a class on that wrapper - it is then the responsibility of the syntaxing library to do the actually syntaxing based on the language class :
+<br /><br />ckeditor5-syntaxer is just a wrapper to be used together with a syntaxing library like eg. HighlightJs. ckeditor5-syntaxer wraps a block of code and set the language as a class on that wrapper - it is then the responsibility of a syntaxing library to do the actually syntaxing based on the language class :
 
 
 
